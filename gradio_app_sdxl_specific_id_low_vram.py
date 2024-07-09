@@ -756,6 +756,8 @@ def process_generation(
         # apply the style template
         ##### load pipe
         del pipe
+        pipe.unet = None
+        pipe.scheduler = None
         gc.collect()
         if device == "cuda":
             torch.cuda.empty_cache()
